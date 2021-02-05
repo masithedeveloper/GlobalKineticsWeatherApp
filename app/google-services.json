@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296613260040",
+    "project_id": "global-kinetics-weather-app",
+    "storage_bucket": "global-kinetics-weather-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296613260040:android:770c475debcfb7d3571abd",
+        "android_client_info": {
+          "package_name": "com.kinetics.weatherapp.openweatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296613260040-ko5e5lrvj642ot3g0bq4ofo5fl12sbnt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBLkG9Cz1vskL5DSE7ddqRJDehqSOvV0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296613260040-ko5e5lrvj642ot3g0bq4ofo5fl12sbnt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

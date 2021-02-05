@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.kinetics.weatherapp.openweatherapp"
+        minSdkVersion min_sdk_version
+        targetSdkVersion compile_sdk_version
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField 'String', "ApiKey", "\"53f9d8e4213222cf517d86dc406d67fc\""
+            buildConfigField 'String', "BaseUrl", "\"http://api.openweathermap.org/data/2.5/\""
+            resValue 'string', "api_key", "53f9d8e4213222cf517d86dc406d67fc"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "ApiKey", "53f9d8e4213222cf517d86dc406d67fc"
+            buildConfigField 'String', "BaseUrl", "\"http://api.openweathermap.org/data/2.5/\""
+            resValue 'string', "api_key", "53f9d8e4213222cf517d86dc406d67fc"
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree (include: ['*.jar'], dir: 'libs')
+    implementation libraries
+    implementation arch_libraries
+    kapt librariesKapt
+}
